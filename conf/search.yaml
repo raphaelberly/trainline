@@ -1,4 +1,4 @@
 - url: https://www.thetrainline.com/book/results?origin=urn%3Atrainline%3Ageneric%3Aloc%3A4791&destination=urn%3Atrainline%3Ageneric%3Aloc%3A4924&outwardDate=2025-05-11T14%3A00%3A00&outwardDateType=departAfter&journeySearchType=single&passengerDiscountCards%5B%5D=8a312f57780df886f262df3c43006e1fa9ecf456&passengerDiscountCards%5B%5D=6987f5c03967544bd615aa2cabf304ceced99f23&passengers%5B%5D=undefined%7Cd15885be-3a82-44ee-858b-cb67e1053431&directSearch=false&transportModes%5B%5D=mixed&lang=fr
-  key: 11th of May 2025, MRS>PAR
+  key: MRS>PAR, 11th of May
   time: '14:46'
   target_result: 3  # 3rd result of the page

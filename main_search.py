@@ -48,7 +48,7 @@ try:
         if trip.get_attribute('data-test-unsellable') == 'true':
             LOGGER.info('Train is unsellable. No notification was sent.')
         else:
-            push.send_message("A train is available", title='🚄 Trainline Alert')
+            push.send_message(f"{train['key']} available", title='🚄 Trainline Alert')
             LOGGER.info('Train is sellable: Notification sent.')
 
 except Exception as e:
