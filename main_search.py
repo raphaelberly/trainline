@@ -3,6 +3,8 @@ import yaml
 from selenium import webdriver
 
 from lib.push import Push
+from selenium.webdriver.chrome.service import Service as ChromeService
+from webdriver_manager.chrome import ChromeDriverManager
 
 push_credentials = yaml.safe_load(open('conf/secrets.yaml'))['push']
 push = Push(**push_credentials)
@@ -14,7 +16,8 @@ options.add_argument("--disable-gpu")
 options.add_argument("--window-size=1000x800")
 options.add_argument("--headless")
 
-driver = webdriver.Chrome(options=options)
+service = ChromeService(ChromeDriverManager().install())
+driver = webdriver.Chrome(service=service, options=options)
 
 trains_to_check = yaml.safe_load(open('conf/search.yaml'))
 
