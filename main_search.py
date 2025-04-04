@@ -23,7 +23,7 @@ options.add_argument("--disable-sync")
 options.add_argument("--disable-background-networking")
 options.add_argument("--disable-gpu")
 options.add_argument("--no-sandbox")
-options.add_argument("--headless")
+# options.add_argument("--headless")
 
 try:
     LOGGER.info('Starting Chrome driver')
@@ -47,6 +47,8 @@ try:
 
         if trip.get_attribute('data-test-unsellable') == 'true':
             LOGGER.info('Train is unsellable. No notification was sent.')
+        elif '1ère classe' in trip.accessible_name and train['exclude_first_class']:
+            LOGGER.info('Train is sellable but only first class. No notification was sent.')
         else:
             push.send_message(f"{train['key']} available", title='🚄 Trainline Alert')
             LOGGER.info('Train is sellable: Notification sent.')
