@@ -42,7 +42,7 @@ try:
         time.sleep(2)
 
         trip = driver.find_element(by='xpath', value=f'//*[@aria-labelledby="urn:trainline:flex:nonflexi"]/div[{train["target_result"]}]')
-        assert trip.text.startswith(train['time']), 'Could not find target train'
+        assert train['time'] in trip.text, 'Could not find target train'
         time.sleep(2)
 
         if trip.get_attribute('data-test-unsellable') == 'true':
