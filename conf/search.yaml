@@ -2,9 +2,9 @@
   key: MRS>PAR, 11th of May
   time: '14:46'
   target_result: 3  # 3rd result of the page
-  exclude_first_class: True
+  only_second_class: True
 - url: https://www.thetrainline.com/book/results?journeySearchType=single&origin=urn%3Atrainline%3Ageneric%3Aloc%3A4924&destination=urn%3Atrainline%3Ageneric%3Aloc%3A4791&outwardDate=2025-05-01T09%3A30%3A13&outwardDateType=departAfter&selectedTab=train&splitSave=true&lang=fr&transportModes%5B%5D=mixed&dpiCookieId=JE1JMELZ9ZTBKG4LHSMF577K1&partnershipType=accommodation&partnershipSelection=false
   key: PAR>MRS, 1st of May
   time: '09:38'
   target_result: 1  # 1st result of the page
-  exclude_first_class: True
+  only_second_class: True
