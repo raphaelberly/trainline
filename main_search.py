@@ -30,28 +30,29 @@ try:
     service = ChromeService(credentials.get('chromedriver') or ChromeDriverManager().install())
     driver = webdriver.Chrome(service=service, options=options)
 
-    trains_to_check = yaml.safe_load(open('conf/search.yaml'))
+    searches = yaml.safe_load(open('conf/search.yaml'))
 
-    for train in trains_to_check:
-        driver.get(train["url"])
-        LOGGER.info(f'Loaded page for: {train["key"]}')
-        time.sleep(2)
-        for cookie_button in driver.find_elements(by='xpath', value='//*[text()="Continuer sans accepter"]'):
-            cookie_button.click()
-        LOGGER.debug(f'Refused cookies')
-        time.sleep(2)
+    for search in searches:
+        driver.get(search["url"])
+        LOGGER.info(f'Loaded page for: {search["key"]}')
+        time.sleep(5)
+        for train in search["trains"]:
+            # for cookie_button in driver.find_elements(by='xpath', value='//*[text()="Continuer sans accepter"]'):
+            #     cookie_button.click()
+            # LOGGER.debug(f'Refused cookies')
+            # time.sleep(2)
+            driver.execute_script("window.scrollTo(0, 380)")
+            trip = driver.find_element(by='xpath', value=f'//*[@aria-labelledby="urn:trainline:flex:nonflexi"]/div[{train["target_result"]}]')
+            assert train['time'] in trip.text, 'Could not find target train'
+            time.sleep(2)
 
-        trip = driver.find_element(by='xpath', value=f'//*[@aria-labelledby="urn:trainline:flex:nonflexi"]/div[{train["target_result"]}]')
-        assert train['time'] in trip.text, 'Could not find target train'
-        time.sleep(2)
-
-        if trip.get_attribute('data-test-unsellable') == 'true':
-            LOGGER.info('Train is unsellable. No notification was sent.')
-        elif 'un billet de 2nde classe' not in trip.accessible_name and train['only_second_class']:
-            LOGGER.info('Only first class ticket was found. No notification was sent.')
-        else:
-            push.send_message(f"{train['key']} available", title='🚄 Trainline Alert')
-            LOGGER.info('Train is sellable: Notification sent.')
+            if trip.get_attribute('data-test-unsellable') == 'true':
+                LOGGER.info('Train is unsellable. No notification was sent.')
+            elif 'un billet de 2nde classe' not in trip.accessible_name and train['only_second_class']:
+                LOGGER.info('Only first class ticket was found. No notification was sent.')
+            else:
+                push.send_message(f"{train['key']} available", title='🚄 Trainline Alert')
+                LOGGER.info('Train is sellable: Notification sent.')
 
 except Exception as e:
     push.send_message("An error occurred", title='⚠️Broken trainline alerting')
