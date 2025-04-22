@@ -1,9 +1,9 @@
-- url: https://www.thetrainline.com/book/results?journeySearchType=single&origin=urn%3Atrainline%3Ageneric%3Aloc%3A26828&destination=urn%3Atrainline%3Ageneric%3Aloc%3A4916&outwardDate=2025-06-01T20%3A00%3A35&outwardDateType=departAfter&selectedTab=train&splitSave=true&lang=fr&transportModes%5B%5D=mixed&dpiCookieId=ZMI108Y6ECC1662YSQVCI11L0&partnershipType=accommodation&partnershipSelection=false&selectedOutward=CG9bUTwRMUA%3D%3Ae9x7oKxre%2Bo%3D%3AStandard
-  key: CHAMB>PAR June 1
+- url: https://www.thetrainline.com/book/results?origin=urn%3Atrainline%3Ageneric%3Aloc%3A4791&destination=urn%3Atrainline%3Ageneric%3Aloc%3A4916&outwardDate=2025-07-14T17%3A00%3A00&outwardDateType=departAfter&journeySearchType=single&passengers%5B%5D=1992-04-22%7Cpid-0&directSearch=true&transportModes%5B%5D=mixed&lang=fr&selectedOutward=BzGb0%2FDWnWg%3D%3ANLOLzHsmMSg%3D%3AStandard
+  key: MRS>PAR, 14th of July
   trains:
-    - time: '20:22'
-      target_result: 2  # 3rd result of the page
+    - time: '17:03'
+      target_result: 1  # 3rd result of the page
       only_second_class: True
-    - time: '20:22'
-      target_result: 3  # 3rd result of the page
+    - time: '19:04'
+      target_result: 5  # 3rd result of the page
       only_second_class: True

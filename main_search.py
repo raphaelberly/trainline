@@ -37,10 +37,10 @@ try:
         LOGGER.info(f'Loaded page for: {search["key"]}')
         time.sleep(5)
         for train in search["trains"]:
-            # for cookie_button in driver.find_elements(by='xpath', value='//*[text()="Continuer sans accepter"]'):
-            #     cookie_button.click()
-            # LOGGER.debug(f'Refused cookies')
-            # time.sleep(2)
+            for cookie_button in driver.find_elements(by='xpath', value='//*[text()="Continuer sans accepter"]'):
+                cookie_button.click()
+            LOGGER.debug(f'Refused cookies')
+            time.sleep(2)
             driver.execute_script("window.scrollTo(0, 380)")
             trip = driver.find_element(by='xpath', value=f'//*[@aria-labelledby="urn:trainline:flex:nonflexi"]/div[{train["target_result"]}]')
             assert train['time'] in trip.text, 'Could not find target train'
