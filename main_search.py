@@ -23,7 +23,7 @@ options.add_argument("--disable-sync")
 options.add_argument("--disable-background-networking")
 options.add_argument("--disable-gpu")
 options.add_argument("--no-sandbox")
-# options.add_argument("--headless")
+options.add_argument("--headless")
 
 try:
     LOGGER.info('Starting Chrome driver')
