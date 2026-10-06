@@ -52,7 +52,7 @@ try:
                     elif 'un billet de 2nde classe' not in trip.accessible_name and train['only_second_class']:
                         LOGGER.info('Only first class ticket was found. No notification was sent.')
                     else:
-                        push.send_message(f"{train['key']} available", title='🚄 Trainline Alert')
+                        push.send_message(f"{search['key']} ({train['time']}) available", title='🚄 Trainline Alert')
                         LOGGER.info('Train is sellable: Notification sent.')
 
 except Exception as e:
