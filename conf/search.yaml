@@ -1,9 +1,9 @@
-- url: https://www.thetrainline.com/book/results?origin=urn%3Atrainline%3Ageneric%3Aloc%3A4791&destination=urn%3Atrainline%3Ageneric%3Aloc%3A4916&outwardDate=2025-07-14T17%3A00%3A00&outwardDateType=departAfter&journeySearchType=single&passengers%5B%5D=1992-04-22%7Cpid-0&directSearch=true&transportModes%5B%5D=mixed&lang=fr&selectedOutward=BzGb0%2FDWnWg%3D%3ANLOLzHsmMSg%3D%3AStandard
-  key: MRS>PAR, 14th of July
+- url: https://www.thetrainline.com/book/results?journeySearchType=single&origin=urn%3Atrainline%3Ageneric%3Aloc%3A1339&destination=urn%3Atrainline%3Ageneric%3Aloc%3A4916&outwardDate=2026-11-01T16%3A15%3A56&outwardDateType=departAfter&selectedTab=train&splitSave=true&lang=fr&transportModes%5B%5D=mixed&dpiCookieId=MGUPHNF93TR589UEH8UY7TOCL&partnershipType=accommodation&partnershipSelection=false&selectedOutward=df3w7WeqGxk%3D%3AX8NH3VycOkI%3D%2C%2B%2BZWsbl5fi8%3D%3AStandard
+  key: CHB>PAR, 1st of Nov
   trains:
-    - time: '17:03'
-      target_result: 1  # 3rd result of the page
+    - time: '18:23'
+      target_result: 4  # 4th result of the page
       only_second_class: True
-    - time: '19:04'
-      target_result: 5  # 3rd result of the page
+    - time: '18:23'
+      target_result: 5  # 5th result of the page
       only_second_class: True
