@@ -1,5 +1,7 @@
 # CLAUDE.md
 
+**Before writing, changing or reviewing code here, load the `anthropic-skills:raphael-python-style` skill.** It holds the house style and the rule to keep diffs minimal.
+
 Personal alert script: it watches Trainline results pages (thetrainline.com, French UI) for specific trains and sends a Pushover notification when a ticket becomes sellable.
 
 ## Layout
